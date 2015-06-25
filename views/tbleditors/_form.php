@@ -6,7 +6,7 @@ use yii\helpers\ArrayHelper;
 use app\models\Tblcountries;
 use app\models\Tbleducation;
 
-use app\kartik\file\FileInput;
+use kartik\file\FileInput;
 
 /* @var $this yii\web\View */
 /* @var $model app\models\Tbleditors */
@@ -32,32 +32,18 @@ use app\kartik\file\FileInput;
     <?php
 // or 'use kartikile\FileInput' if you have only installed yii2-widget-fileinput in isolation
 // Usage with ActiveForm and model
-    echo $form->field($model, 'avatar')->widget(FileInput::classname(), [
+    echo $form->field($model, 'photo')->widget(FileInput::classname(), [
         'options' => ['accept' => 'image/*'],
     ]);
 
-// With model & without ActiveForm
-// Note for multiple file upload, the attribute name must be appended with 
-// `[]` for PHP to be able to read an array of files
-    echo '<label class="control-label">Add Attachments</label>';
-    echo FileInput::widget([
-        'model' => $model,
-        'attribute' => 'attachment_1[]',
-        'options' => ['multiple' => true]
-    ]);
+//    echo '<label class="control-label">Add Attachments</label>';
+//    echo FileInput::widget([
+//        'model' => $model,
+//        'attribute' => 'attachment_1[]',
+//        'options' => ['multiple' => true]
+//    ]);
 
-// Usage without a model
-    echo '<label class="control-label">Upload Document</label>';
-    echo FileInput::widget([
-        'name' => 'attachment_3',
-    ]);
 
-// A disabled fileinput input
-    echo '<label class="control-label">Select Attachment</label>';
-    echo FileInput::widget([
-        'name' => 'attachment_4',
-        'disabled' => true
-    ]);
     ?>
 
     <div class="form-group">

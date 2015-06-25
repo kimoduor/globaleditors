@@ -17,14 +17,13 @@ use Yii;
  * @property string $email
  * @property string $Comments
  * @property integer $status
+ * @property string $photo
  *
  * @property Tblcountries $country
  * @property Tbleducation $educationLevel
  */
 class Tbleditors extends \yii\db\ActiveRecord
 {
-    public $avatar;
-    public $attachment_1;
     /**
      * @inheritdoc
      */
@@ -41,7 +40,7 @@ class Tbleditors extends \yii\db\ActiveRecord
         return [
             [['editor_name', 'country_id', 'education_level_id', 'stars', 'mobile', 'email'], 'required'],
             [['country_id', 'education_level_id', 'stars', 'status'], 'integer'],
-            [['Comments'], 'string'],
+            [['Comments', 'photo'], 'string'],
             [['editor_name', 'education_institution', 'mobile', 'email'], 'string', 'max' => 255]
         ];
     }
@@ -62,6 +61,7 @@ class Tbleditors extends \yii\db\ActiveRecord
             'email' => 'Email',
             'Comments' => 'Comments',
             'status' => 'Status',
+            'photo' => 'Photo',
         ];
     }
 
