@@ -40,6 +40,7 @@ class Tbleditors extends \yii\db\ActiveRecord
         return [
             [['editor_name', 'country_id', 'education_level_id', 'stars', 'mobile', 'email'], 'required'],
             [['country_id', 'education_level_id', 'stars', 'status'], 'integer'],
+             [['email'], 'email'],
             [['Comments', 'photo'], 'string'],
             [['editor_name', 'education_institution', 'mobile', 'email'], 'string', 'max' => 255]
         ];

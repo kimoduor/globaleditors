@@ -49,15 +49,19 @@ AppAsset::register($this);
             echo Nav::widget([
                 'options' => ['class' => 'navbar-nav navbar-right'],
                 'items' => [
-
-                    ['label' => 'Setup', 'items' => [
-                            [ 'label' => 'Countries', 'url' => Url::toRoute(['tblcountries/index'])],
-                            [ 'label' => 'Education levels', 'url' => Url::toRoute(['tbleducation/index'])],
-                            [ 'label' => 'Editors', 'url' => Url::toRoute(['tbleditors/index'])]
-                        ]],
                     ['label' => 'Home', 'url' => ['/site/index']],
                     ['label' => 'About Global Editors', 'url' => ['/site/about']],
                     ['label' => 'Contact', 'url' => ['/site/contact']],
+                    ['label' => 'Setup', 'items' => [
+                            [ 'label' => 'Countries', 'url' => Url::toRoute(['tblcountries/index'])],
+                            [ 'label' => 'Education levels', 'url' => Url::toRoute(['tbleducation/index'])],
+                            [ 'label' => 'Editors', 'url' => Url::toRoute(['tbleditors/index'])],
+                            [ 'label' => 'Order Status', 'url' => Url::toRoute(['tblorderstatus/index'])],
+                            [ 'label' => 'Clients', 'url' => Url::toRoute(['tblclients/index'])]
+                        ]],
+                    ['label' => 'Orders', 'items' => [
+                            [ 'label' => 'New Orders', 'url' => Url::toRoute(['tblorders/index'])],
+                        ]],
                     Yii::$app->user->isGuest ?
                             ['label' => 'Login', 'url' => ['/site/login']] :
                             ['label' => 'Logout (' . Yii::$app->user->identity->username . ')',
