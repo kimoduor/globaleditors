@@ -6,7 +6,7 @@ use yii\grid\GridView;
 /* @var $this yii\web\View */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Tblcountries';
+$this->title = 'Countries';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="tblcountries-index">
@@ -14,15 +14,13 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a('Create Tblcountries', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Create Country', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
-
-            'country_id',
             'country_name',
 
             ['class' => 'yii\grid\ActionColumn'],

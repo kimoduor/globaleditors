@@ -6,8 +6,8 @@ use yii\widgets\DetailView;
 /* @var $this yii\web\View */
 /* @var $model app\models\Tbleducation */
 
-$this->title = $model->education_level_id;
-$this->params['breadcrumbs'][] = ['label' => 'Tbleducations', 'url' => ['index']];
+$this->title = 'Education Certification';
+$this->params['breadcrumbs'][] = ['label' => 'Education Certification', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="tbleducation-view">
@@ -28,7 +28,6 @@ $this->params['breadcrumbs'][] = $this->title;
     <?= DetailView::widget([
         'model' => $model,
         'attributes' => [
-            'education_level_id',
             'level_name',
         ],
     ]) ?>

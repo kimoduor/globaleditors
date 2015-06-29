@@ -6,8 +6,8 @@ use yii\widgets\DetailView;
 /* @var $this yii\web\View */
 /* @var $model app\models\Tbleditors */
 
-$this->title = $model->editor_id;
-$this->params['breadcrumbs'][] = ['label' => 'Tbleditors', 'url' => ['index']];
+$this->title = 'Editor'.$model->editor_id;
+$this->params['breadcrumbs'][] = ['label' => 'Editors', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="tbleditors-view">
@@ -28,10 +28,9 @@ $this->params['breadcrumbs'][] = $this->title;
     <?= DetailView::widget([
         'model' => $model,
         'attributes' => [
-            'editor_id',
             'editor_name',
-            'country_id',
-            'education_level_id',
+            'country.country_name',
+            'educationLevel.level_name',
             'education_institution',
             'stars',
             'mobile',

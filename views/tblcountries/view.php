@@ -7,7 +7,7 @@ use yii\widgets\DetailView;
 /* @var $model app\models\Tblcountries */
 
 $this->title = $model->country_id;
-$this->params['breadcrumbs'][] = ['label' => 'Tblcountries', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => 'Countries', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="tblcountries-view">

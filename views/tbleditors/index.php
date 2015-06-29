@@ -6,7 +6,7 @@ use yii\grid\GridView;
 /* @var $this yii\web\View */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Tbleditors';
+$this->title = 'Editors';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="tbleditors-index">
@@ -14,22 +14,20 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a('Create Tbleditors', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Add Editors', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
-
-            'editor_id',
             'editor_name',
-            'country_id',
-            'education_level_id',
+            'country.country_name',
+            'educationLevel.level_name',
             'education_institution',
-            // 'stars',
-            // 'mobile',
-            // 'email:email',
+            'stars',
+           'mobile',
+            'email:email',
 
             ['class' => 'yii\grid\ActionColumn'],
         ],

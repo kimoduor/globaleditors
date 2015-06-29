@@ -6,7 +6,7 @@ use yii\grid\GridView;
 /* @var $this yii\web\View */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Tblorderstatuses';
+$this->title = 'Order Status';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="tblorderstatus-index">
@@ -14,15 +14,13 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a('Create Tblorderstatus', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Add Order Status', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
-
-            'status_id',
             'status',
 
             ['class' => 'yii\grid\ActionColumn'],

@@ -5,8 +5,8 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model app\models\Tbleditors */
 
-$this->title = 'Update Tbleditors: ' . ' ' . $model->editor_id;
-$this->params['breadcrumbs'][] = ['label' => 'Tbleditors', 'url' => ['index']];
+$this->title = 'Update Editor: ' . ' ' . $model->editor_id;
+$this->params['breadcrumbs'][] = ['label' => 'Editors', 'url' => ['index']];
 $this->params['breadcrumbs'][] = ['label' => $model->editor_id, 'url' => ['view', 'id' => $model->editor_id]];
 $this->params['breadcrumbs'][] = 'Update';
 ?>

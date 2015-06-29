@@ -6,8 +6,8 @@ use yii\widgets\DetailView;
 /* @var $this yii\web\View */
 /* @var $model app\models\Tblorders */
 
-$this->title = $model->title;
-$this->params['breadcrumbs'][] = ['label' => 'Tblorders', 'url' => ['index']];
+$this->title = 'Order'.$model->title;
+$this->params['breadcrumbs'][] = ['label' => 'Orders', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="tblorders-view">
@@ -28,14 +28,13 @@ $this->params['breadcrumbs'][] = $this->title;
     <?= DetailView::widget([
         'model' => $model,
         'attributes' => [
-            'order_id',
             'title',
-            'client_id',
-            'country_id',
+            'client.Names',
+            'country.country_name',
             'rubric:ntext',
             'Other_instructions:ntext',
             'files:ntext',
-            'status_id',
+            'status.status',
         ],
     ]) ?>
 

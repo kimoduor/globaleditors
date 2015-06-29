@@ -8,6 +8,7 @@ use Yii;
  * This is the model class for table "tblorders".
  *
  * @property integer $order_id
+ * @property string $order_code
  * @property string $title
  * @property integer $client_id
  * @property integer $country_id
@@ -18,6 +19,9 @@ use Yii;
  * @property string $date_ordered
  * @property string $date_expected
  *
+ * @property Tbleditorspayment[] $tbleditorspayments
+ * @property Tblneworderpayment[] $tblneworderpayments
+ * @property Tblorderassignment[] $tblorderassignments
  * @property Tblclients $client
  * @property Tblcountries $country
  * @property Tblorderstatus $status
@@ -38,11 +42,11 @@ class Tblorders extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['title', 'client_id', 'status_id'], 'required'],
+            [['order_code', 'title', 'client_id', 'status_id'], 'required'],
             [['client_id', 'country_id', 'status_id'], 'integer'],
             [['rubric', 'Other_instructions', 'files'], 'string'],
             [['date_ordered', 'date_expected'], 'safe'],
-            [['title'], 'string', 'max' => 255]
+            [['order_code', 'title'], 'string', 'max' => 255]
         ];
     }
 
@@ -53,9 +57,10 @@ class Tblorders extends \yii\db\ActiveRecord
     {
         return [
             'order_id' => 'Order ID',
+            'order_code' => 'Order Code',
             'title' => 'Title',
-            'client_id' => 'Client ID',
-            'country_id' => 'Country ID',
+            'client_id' => 'Client',
+            'country_id' => 'Country ',
             'rubric' => 'Rubric',
             'Other_instructions' => 'Other Instructions',
             'files' => 'Files',
@@ -63,6 +68,30 @@ class Tblorders extends \yii\db\ActiveRecord
             'date_ordered' => 'Date Ordered',
             'date_expected' => 'Date Expected',
         ];
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getTbleditorspayments()
+    {
+        return $this->hasMany(Tbleditorspayment::className(), ['order_id' => 'order_id']);
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getTblneworderpayments()
+    {
+        return $this->hasMany(Tblneworderpayment::className(), ['order_id' => 'order_id']);
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getTblorderassignments()
+    {
+        return $this->hasMany(Tblorderassignment::className(), ['order_id' => 'order_id']);
     }
 
     /**

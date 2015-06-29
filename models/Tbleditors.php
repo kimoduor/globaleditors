@@ -52,10 +52,10 @@ class Tbleditors extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'editor_id' => 'Editor ID',
+            'editor_id' => 'Editor',
             'editor_name' => 'Editor Name',
-            'country_id' => 'Country ID',
-            'education_level_id' => 'Education Level ID',
+            'country_id' => 'Country',
+            'education_level_id' => 'Education Level',
             'education_institution' => 'Education Institution',
             'stars' => 'Stars',
             'mobile' => 'Mobile',

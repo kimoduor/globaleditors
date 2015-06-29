@@ -6,8 +6,8 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model app\models\Tblorderstatus */
 
-$this->title = 'Create Tblorderstatus';
-$this->params['breadcrumbs'][] = ['label' => 'Tblorderstatuses', 'url' => ['index']];
+$this->title = 'Add Order Status';
+$this->params['breadcrumbs'][] = ['label' => 'Order Status', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="tblorderstatus-create">

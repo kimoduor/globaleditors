@@ -14,6 +14,7 @@ return array(
     'yii\\codeception\\' => array($vendorDir . '/yiisoft/yii2-codeception'),
     'yii\\bootstrap\\' => array($vendorDir . '/yiisoft/yii2-bootstrap'),
     'yii\\' => array($vendorDir . '/yiisoft/yii2'),
+    'kartik\\select2\\' => array($vendorDir . '/kartik-v/yii2-widget-select2'),
     'kartik\\plugins\\fileinput\\' => array($vendorDir . '/kartik-v/bootstrap-fileinput'),
     'kartik\\file\\' => array($vendorDir . '/kartik-v/yii2-widget-fileinput'),
     'kartik\\datetime\\' => array($vendorDir . '/kartik-v/yii2-widget-datetimepicker'),

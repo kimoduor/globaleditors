@@ -5,8 +5,8 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model app\models\Tblorderstatus */
 
-$this->title = 'Update Tblorderstatus: ' . ' ' . $model->status_id;
-$this->params['breadcrumbs'][] = ['label' => 'Tblorderstatuses', 'url' => ['index']];
+$this->title = 'Update Order Status: ' . ' ' . $model->status_id;
+$this->params['breadcrumbs'][] = ['label' => 'Order Status', 'url' => ['index']];
 $this->params['breadcrumbs'][] = ['label' => $model->status_id, 'url' => ['view', 'id' => $model->status_id]];
 $this->params['breadcrumbs'][] = 'Update';
 ?>

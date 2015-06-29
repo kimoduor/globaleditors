@@ -6,8 +6,8 @@ use yii\widgets\DetailView;
 /* @var $this yii\web\View */
 /* @var $model app\models\Tblclients */
 
-$this->title = $model->client_id;
-$this->params['breadcrumbs'][] = ['label' => 'Tblclients', 'url' => ['index']];
+$this->title = "Client".$model->client_id;
+$this->params['breadcrumbs'][] = ['label' => 'Clients', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="tblclients-view">
@@ -28,7 +28,6 @@ $this->params['breadcrumbs'][] = $this->title;
     <?= DetailView::widget([
         'model' => $model,
         'attributes' => [
-            'client_id',
             'Names',
             'email:email',
             'mobile',

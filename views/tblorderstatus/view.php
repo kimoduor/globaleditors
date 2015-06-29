@@ -6,7 +6,7 @@ use yii\widgets\DetailView;
 /* @var $this yii\web\View */
 /* @var $model app\models\Tblorderstatus */
 
-$this->title = $model->status_id;
+$this->title = 'Order Status '.$model->status_id;
 $this->params['breadcrumbs'][] = ['label' => 'Tblorderstatuses', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
@@ -28,7 +28,6 @@ $this->params['breadcrumbs'][] = $this->title;
     <?= DetailView::widget([
         'model' => $model,
         'attributes' => [
-            'status_id',
             'status',
         ],
     ]) ?>

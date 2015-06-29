@@ -6,8 +6,8 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model app\models\Tblorders */
 
-$this->title = 'Create Tblorders';
-$this->params['breadcrumbs'][] = ['label' => 'Tblorders', 'url' => ['index']];
+$this->title = 'Add Order';
+$this->params['breadcrumbs'][] = ['label' => 'Order', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="tblorders-create">

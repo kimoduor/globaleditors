@@ -61,6 +61,9 @@ AppAsset::register($this);
                         ]],
                     ['label' => 'Orders', 'items' => [
                             [ 'label' => 'New Orders', 'url' => Url::toRoute(['tblorders/index'])],
+                            [ 'label' => 'New Order Payments', 'url' => Url::toRoute(['tblneworderpayment/index'])],
+                            [ 'label' => 'Order Assignment', 'url' => Url::toRoute(['tblorderassignment/index'])],
+                            [ 'label' => 'Editors Payments', 'url' => Url::toRoute(['tbleditorspayment/index'])],
                         ]],
                     Yii::$app->user->isGuest ?
                             ['label' => 'Login', 'url' => ['/site/login']] :

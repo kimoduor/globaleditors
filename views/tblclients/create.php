@@ -6,8 +6,8 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model app\models\Tblclients */
 
-$this->title = 'Create Tblclients';
-$this->params['breadcrumbs'][] = ['label' => 'Tblclients', 'url' => ['index']];
+$this->title = 'Add Client';
+$this->params['breadcrumbs'][] = ['label' => 'Client', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="tblclients-create">

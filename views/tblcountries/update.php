@@ -5,8 +5,8 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model app\models\Tblcountries */
 
-$this->title = 'Update Tblcountries: ' . ' ' . $model->country_id;
-$this->params['breadcrumbs'][] = ['label' => 'Tblcountries', 'url' => ['index']];
+$this->title = 'Update Country: ' . ' ' . $model->country_id;
+$this->params['breadcrumbs'][] = ['label' => 'Countries', 'url' => ['index']];
 $this->params['breadcrumbs'][] = ['label' => $model->country_id, 'url' => ['view', 'id' => $model->country_id]];
 $this->params['breadcrumbs'][] = 'Update';
 ?>

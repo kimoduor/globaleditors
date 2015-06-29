@@ -8,6 +8,7 @@ use app\models\Tblclients;
 use app\models\Tblorderstatus;
 use kartik\file\FileInput;
 use kartik\datetime\DateTimePicker;
+use kartik\select2\Select2;
 
 /* @var $this yii\web\View */
 /* @var $model app\models\Tblorders */
@@ -19,10 +20,9 @@ use kartik\datetime\DateTimePicker;
     <?php $form = ActiveForm::begin(); ?>
 
     <?= $form->field($model, 'title')->textInput(['maxlength' => true]) ?>
+    <?php echo $form->field($model, 'client_id')->widget(Select2::classname(), ['data' => ArrayHelper::map(Tblclients::find()->all(), 'client_id', 'Names'), 'options' => ['placeholder' => 'Select client'], 'pluginOptions' => ['allowClear' => true],]); ?>
+    <?php echo $form->field($model, 'country_id')->widget(Select2::classname(), ['data' => ArrayHelper::map(Tblcountries::find()->all(), 'country_id', 'country_name'), 'options' => ['placeholder' => 'Select country'], 'pluginOptions' => ['allowClear' => true],]); ?>
 
-    <?php echo $form->field($model, 'client_id')->dropDownList(ArrayHelper::map(Tblclients::find()->all(), 'client_id', 'Names'), ['prompt' => 'Select client']); ?>
-
-    <?php echo $form->field($model, 'country_id')->dropDownList(ArrayHelper::map(Tblcountries::find()->all(), 'country_id', 'country_name'), ['prompt' => 'Select country']); ?>
 
     <?= $form->field($model, 'rubric')->textarea(['rows' => 3]) ?>
 
@@ -37,30 +37,32 @@ use kartik\datetime\DateTimePicker;
 
     <?php echo $form->field($model, 'status_id')->dropDownList(ArrayHelper::map(Tblorderstatus::find()->all(), 'status_id', 'status'), ['prompt' => 'Select Status']); ?>
     <?php
+    
     echo '<label>Date and Time Ordered</label>';
     echo DateTimePicker::widget([
         'name' => 'date_ordered',
-        'options'=>['required'=>true],
-        // 'convertFormat' => true,
+        'value' => $model->date_ordered,
+        'options' => ['required' => true],
         'pluginOptions' => [
             'format' => 'yyyy-mm-dd hh:ii',
             'startDate' => '01-Mar-2014 12:00 AM',
             'todayHighlight' => true
-            ]
         ]
+            ]
     );
     ?>
-        <?php
+    <?php
     echo '<label>Date and Time Expected</label>';
     echo DateTimePicker::widget([
         'name' => 'date_expected',
-        'options'=>['required'=>true],
+        'value' => $model->date_expected,
+        'options' => ['required' => true],
         'pluginOptions' => [
             'format' => 'yyyy-mm-dd hh:ii',
             'startDate' => '01-Mar-2014 12:00 AM',
             'todayHighlight' => true
-            ]
         ]
+            ]
     );
     ?>
 

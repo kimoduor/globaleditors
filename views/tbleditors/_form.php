@@ -5,8 +5,8 @@ use yii\widgets\ActiveForm;
 use yii\helpers\ArrayHelper;
 use app\models\Tblcountries;
 use app\models\Tbleducation;
-
 use kartik\file\FileInput;
+use kartik\select2\Select2;
 
 /* @var $this yii\web\View */
 /* @var $model app\models\Tbleditors */
@@ -18,11 +18,8 @@ use kartik\file\FileInput;
     <?php $form = ActiveForm::begin(); ?>
 
     <?= $form->field($model, 'editor_name')->textInput(['maxlength' => true]) ?>
-
-    <?php echo $form->field($model, 'country_id')->dropDownList(ArrayHelper::map(Tblcountries::find()->all(), 'country_id', 'country_name'), ['prompt' => 'Select country']); ?>
-
-    <?php echo $form->field($model, 'education_level_id')->dropDownList(ArrayHelper::map(Tbleducation::find()->all(), 'education_level_id', 'level_name'), ['prompt' => 'Select country']); ?>
-
+    <?php echo $form->field($model, 'country_id')->widget(Select2::classname(), ['data' => ArrayHelper::map(Tblcountries::find()->all(), 'country_id', 'country_name'), 'options' => ['placeholder' => 'Select country'], 'pluginOptions' => ['allowClear' => true],]); ?>
+    <?php echo $form->field($model, 'education_level_id')->widget(Select2::classname(), ['data' => ArrayHelper::map(Tbleducation::find()->all(), 'education_level_id', 'level_name'), 'options' => ['placeholder' => 'Select Education Certification'], 'pluginOptions' => ['allowClear' => true],]); ?>
     <?= $form->field($model, 'education_institution')->textInput(['maxlength' => true]) ?>
     <?= $form->field($model, 'stars')->radioList(array('1' => '1', 2 => '2', 3 => '3', 4 => '4', 5 => '5')); ?>
     <?= $form->field($model, 'mobile')->textInput(['maxlength' => true]) ?>
@@ -30,20 +27,9 @@ use kartik\file\FileInput;
     <?= $form->field($model, 'email')->textInput(['maxlength' => true]) ?>
     <?= $form->field($model, 'Comments')->textarea() ?>
     <?php
-// or 'use kartikile\FileInput' if you have only installed yii2-widget-fileinput in isolation
-// Usage with ActiveForm and model
     echo $form->field($model, 'photo')->widget(FileInput::classname(), [
         'options' => ['accept' => 'image/*'],
     ]);
-
-//    echo '<label class="control-label">Add Attachments</label>';
-//    echo FileInput::widget([
-//        'model' => $model,
-//        'attribute' => 'attachment_1[]',
-//        'options' => ['multiple' => true]
-//    ]);
-
-
     ?>
 
     <div class="form-group">

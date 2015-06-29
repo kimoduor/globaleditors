@@ -6,8 +6,8 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model app\models\Tbleditors */
 
-$this->title = 'Create Editors';
-$this->params['breadcrumbs'][] = ['label' => 'Tbleditors', 'url' => ['index']];
+$this->title = 'Add Editor';
+$this->params['breadcrumbs'][] = ['label' => 'Editors', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="tbleditors-create">

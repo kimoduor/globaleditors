@@ -33,6 +33,7 @@ class Tblclients extends \yii\db\ActiveRecord
         return [
             [['Names', 'email'], 'required'],
             [['status'], 'integer'],
+            [['email'], 'email'],
             [['Names', 'email', 'mobile'], 'string', 'max' => 255]
         ];
     }
